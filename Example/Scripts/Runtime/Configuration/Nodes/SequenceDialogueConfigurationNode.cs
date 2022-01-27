@@ -8,6 +8,7 @@ using UnityEngine;
 namespace Juce.Dialogue.Configuration.Nodes
 {
     [NodeWidth(300)]
+    [NodeTint(160, 60, 60)]
     public class SequenceDialogueConfigurationNode : DialogueConfigurationNode
     {
         [SerializeField] private List<SequenceDialogueEntryConfiguration> entries = new List<SequenceDialogueEntryConfiguration>();

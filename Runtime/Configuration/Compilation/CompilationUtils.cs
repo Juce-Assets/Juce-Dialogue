@@ -151,7 +151,7 @@ namespace Juce.Dialogue.Configuration.Compilation
 
             if (!valueFound)
             {
-                return new CompositeDialogueNode(Array.Empty<IDialogueNode>());
+                return new CompositeDialogueNode();
             }
 
             List<IDialogueNode> nodesFlow = new List<IDialogueNode>();

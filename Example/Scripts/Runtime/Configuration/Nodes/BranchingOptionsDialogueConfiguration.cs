@@ -10,6 +10,7 @@ using XNode;
 namespace Juce.Dialogue.Configuration.Nodes
 {
     [NodeWidth(300)]
+    [NodeTint(60, 60, 160)]
     public class BranchingOptionsDialogueConfiguration : DialogueConfigurationNode
     {
         [SerializeField] private List<BranchingOptionEntryConfiguration> entries = new List<BranchingOptionEntryConfiguration>();

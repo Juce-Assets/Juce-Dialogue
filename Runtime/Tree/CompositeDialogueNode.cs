@@ -4,13 +4,25 @@ namespace Juce.Dialogue.Tree
 {
     public class CompositeDialogueNode : IDialogueNode
     {
-        public IReadOnlyList<IDialogueNode> Entries { get; }
+        private readonly List<IDialogueNode> entries;
+
+        public IReadOnlyList<IDialogueNode> Entries => entries;
 
         public CompositeDialogueNode(
-            IReadOnlyList<IDialogueNode> entries
+            List<IDialogueNode> entries
             )
         {
-            Entries = entries;
+            this.entries = entries;
+        }
+
+        public CompositeDialogueNode()
+        {
+            this.entries = new List<IDialogueNode>();
+        }
+
+        public void Add(IDialogueNode node)
+        {
+            entries.Add(node);
         }
     }
 }
