@@ -1,0 +1,20 @@
+{
+  "name": "com.juce.dialogue",
+  "version": "1.6.2",
+  "displayName": "Juce-Dialogue",
+  "description": "Dialogue system",
+  "dependencies": {
+    "com.github.siccity.xnode": "https://github.com/siccity/xNode.git"
+  },
+  "keywords": [
+    "Juce",
+    "Dialogue"
+  ],
+  "author": {
+    "name": "Guillem Sunyer",
+    "email": "juce.unity@gmail.com",
+    "url": "https://github.com/Juce-Assets/Juce-Dialogue"
+  },
+  "type": "template",
+  "hideInEditor": false
+}
