@@ -1,0 +1,17 @@
+{
+    "name": "Juce.Dialogue.Example.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3d52a4eb5ac34bc4db40ee725f84c35d",
+        "GUID:b8e24fd1eb19b4226afebb2810e3c19b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
