@@ -1,4 +1,4 @@
-﻿namespace Juce.Dialogue.Factories
+﻿namespace Juce.Dialogue.Content
 {
     public class BranchDialogueContent
     {

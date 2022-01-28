@@ -5,14 +5,13 @@ using XNodeEditor;
 
 namespace Juce.Dialogue.Configuration.Nodes
 {
-    [CustomNodeEditor(typeof(BranchingOptionsDialogueConfiguration))]
-    public class ChatEditor : NodeEditor
+    public abstract class BaseBranchingOptionsDialogueConfigurationNodeEditor<TContent> : NodeEditor
     {
-        public override void OnBodyGUI()
+        public sealed override void OnBodyGUI()
         {
             serializedObject.Update();
 
-            BranchingOptionsDialogueConfiguration node = target as BranchingOptionsDialogueConfiguration;
+            BaseBranchingOptionsDialogueConfigurationNode<TContent> node = target as BaseBranchingOptionsDialogueConfigurationNode<TContent>;
 
             GUILayout.BeginHorizontal();
             NodeEditorGUILayout.PortField(new GUIContent("Input"), target.GetInputPort("Input"), GUILayout.MinWidth(0));
@@ -20,19 +19,14 @@ namespace Juce.Dialogue.Configuration.Nodes
             GUILayout.EndHorizontal();
 
             NodeEditorGUILayout.DynamicPortList(
-                "entries", 
-                typeof(DialogueFlow), 
-                serializedObject, 
-                NodePort.IO.Output, 
+                "entries",
+                typeof(DialogueFlow),
+                serializedObject,
+                NodePort.IO.Output,
                 Node.ConnectionType.Override
                 );
 
             serializedObject.ApplyModifiedProperties();
-        }
-
-        public override int GetWidth()
-        {
-            return 300;
         }
     }
 }

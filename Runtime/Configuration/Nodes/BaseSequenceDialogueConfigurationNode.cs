@@ -1,17 +1,13 @@
-using Juce.Dialogue.Configuration.Compilation;
-using Juce.Dialogue.Configuration.Entries;
-using Juce.Dialogue.Content;
+﻿using Juce.Dialogue.Configuration.Compilation;
 using Juce.Dialogue.Tree;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Juce.Dialogue.Configuration.Nodes
 {
-    [NodeWidth(300)]
-    [NodeTint(160, 60, 60)]
-    public class SequenceDialogueConfigurationNode : DialogueConfigurationNode
+    public abstract class BaseSequenceDialogueConfigurationNode<TContent> : DialogueConfigurationNode
     {
-        [SerializeField] private List<SequenceDialogueEntryConfiguration> entries = new List<SequenceDialogueEntryConfiguration>();
+        [SerializeField] private List<TContent> entries = new List<TContent>();
 
         public sealed override IDialogueNode Create()
         {
@@ -27,13 +23,16 @@ namespace Juce.Dialogue.Configuration.Nodes
                 return;
             }
 
-            foreach(SequenceDialogueEntryConfiguration entry in entries)
+            foreach (TContent entry in entries)
             {
-                SequenceDialogueContent content = new SequenceDialogueContent(entry.Text);
-                IDialogueContent dialogueContent = new DialogueContent(content);
+                object contentObject = ProcessContent(entry);
+
+                IDialogueContent dialogueContent = new DialogueContent(contentObject);
 
                 sequenceDialogueNode.Add(dialogueContent);
             }
         }
+
+        protected abstract object ProcessContent(TContent content);
     }
 }

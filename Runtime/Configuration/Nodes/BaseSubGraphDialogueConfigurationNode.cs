@@ -5,11 +5,9 @@ using UnityEngine;
 
 namespace Juce.Dialogue.Configuration.Nodes
 {
-    [NodeWidth(300)]
-    [NodeTint(60, 160, 60)]
-    public class SubGraphDialogueConfiguration : DialogueConfigurationNode
+    public abstract class BaseSubGraphDialogueConfigurationNode<TSubGraph> : DialogueConfigurationNode where TSubGraph : DialogueConfigurationGraph
     {
-        [SerializeField] private ExampleDialogueConfigurationGraph subGraph = default;
+        [SerializeField] private TSubGraph subGraph = default;
 
         public sealed override IDialogueNode Create()
         {
@@ -25,7 +23,7 @@ namespace Juce.Dialogue.Configuration.Nodes
                 return;
             }
 
-            if(subGraph == null)
+            if (subGraph == null)
             {
                 return;
             }

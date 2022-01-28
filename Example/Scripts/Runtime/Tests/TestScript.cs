@@ -10,10 +10,4 @@ public class TestScript : MonoBehaviour
     {
         DialogueFactory.Instance.Create(graph);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

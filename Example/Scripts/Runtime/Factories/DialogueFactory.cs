@@ -13,7 +13,7 @@ namespace Juce.Dialogue.Factories
 
         }
 
-        public IDialogueTree Create(DialogueConfigurationGraph graph)
+        public IDialogueTree Create(ExampleDialogueConfigurationGraph graph)
         {
             return CompilationUtils.CompileGraph(graph);
         }

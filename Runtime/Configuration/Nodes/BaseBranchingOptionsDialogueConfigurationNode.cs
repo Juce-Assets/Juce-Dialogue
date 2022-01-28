@@ -1,6 +1,4 @@
 ﻿using Juce.Dialogue.Configuration.Compilation;
-using Juce.Dialogue.Configuration.Entries;
-using Juce.Dialogue.Factories;
 using Juce.Dialogue.Tree;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +7,9 @@ using XNode;
 
 namespace Juce.Dialogue.Configuration.Nodes
 {
-    [NodeWidth(300)]
-    [NodeTint(60, 60, 160)]
-    public class BranchingOptionsDialogueConfiguration : DialogueConfigurationNode
+    public abstract class BaseBranchingOptionsDialogueConfigurationNode<TContent> : DialogueConfigurationNode
     {
-        [SerializeField] private List<BranchingOptionEntryConfiguration> entries = new List<BranchingOptionEntryConfiguration>();
+        [SerializeField] private List<TContent> entries = new List<TContent>();
 
         public sealed override IDialogueNode Create()
         {
@@ -31,18 +27,21 @@ namespace Juce.Dialogue.Configuration.Nodes
 
             List<NodePort> outputPorts = DynamicOutputs.ToList();
 
-            for(int i = 0; i < entries.Count; ++i)
+            for (int i = 0; i < entries.Count; ++i)
             {
-                BranchingOptionEntryConfiguration entry = entries[i];
+                TContent entry = entries[i];
                 NodePort nodePort = outputPorts[i];
 
-                BranchDialogueContent content = new BranchDialogueContent(entry.Text);
-                IDialogueContent dialogueContent = new DialogueContent(content);
+                object contentObject = ProcessContent(entry);
+
+                IDialogueContent dialogueContent = new DialogueContent(contentObject);
 
                 IDialogueNode dialogueNode = CompilationUtils.LinkFlow(nodeValuesRepository, nodePort);
 
                 branchDialogueNode.Add(dialogueContent, dialogueNode);
             }
         }
+
+        protected abstract object ProcessContent(TContent content);
     }
 }

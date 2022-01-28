@@ -1,12 +1,10 @@
 {
-    "name": "Juce.Dialogue.Example.Editor",
+    "name": "Juce.Dialogue.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:b8e24fd1eb19b4226afebb2810e3c19b",
-        "GUID:002c1bbed08fa44d282ef34fd5edb138",
         "GUID:3d52a4eb5ac34bc4db40ee725f84c35d",
-        "GUID:3f4aaea4741f0f94d945cc4526b24106",
-        "GUID:37f725d26e69b0a4fb90c57b48399c94"
+        "GUID:b8e24fd1eb19b4226afebb2810e3c19b",
+        "GUID:002c1bbed08fa44d282ef34fd5edb138"
     ],
     "includePlatforms": [
         "Editor"
