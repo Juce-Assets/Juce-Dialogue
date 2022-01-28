@@ -1,6 +1,8 @@
 # Juce-Dialogue
 Open-source dialogue system build on top of XNode editor.
 
+![](https://github.com/Juce-Assets/Juce-Tween/blob/develop/Misc/DialogueEditorExample.png)
+
 ## Installing
 ### - Via UPM
 Add the following line to your [manifest.json](https://docs.unity3d.com/Manual/upm-manifestPrj.html).
