@@ -1,7 +1,7 @@
 # Juce-Dialogue
 Open-source dialogue system build on top of XNode editor.
 
-![](https://github.com/Juce-Assets/Juce-Tween/blob/develop/Misc/DialogueEditorExample.png)
+![](https://github.com/Juce-Assets/Juce-Dialogue/blob/main/Misc/DialogueEditorExample.png)
 
 ## Installing
 ### - Via UPM
