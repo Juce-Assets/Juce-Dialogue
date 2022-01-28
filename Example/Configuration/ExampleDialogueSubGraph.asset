@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: beaf93c854ca658419c719e95c5d98e8, type: 3}
-  m_Name: ExampleDialogueGraph 1
+  m_Name: ExampleDialogueSubGraph
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -5844923872837230624}
@@ -48,7 +48,7 @@ MonoBehaviour:
   - {fileID: 617359663273128463}
   - {fileID: 2110427121848423838}
   - {fileID: 5341098701568842817}
-  - {fileID: 8206366368127133242}
+  - {fileID: 0}
 --- !u!114 &617359663273128463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,10 +153,7 @@ MonoBehaviour:
       _node: {fileID: 2110427121848423838}
       _typeQualifiedName: Juce.Dialogue.Configuration.Flow.DialogueFlow, Juce.Dialogue.Runtime,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: 8206366368127133242}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -222,7 +219,7 @@ MonoBehaviour:
   m_Name: Example Sequence Dialogue Configuration
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1128, y: 232}
+  position: {x: 1128, y: 200}
   ports:
     keys:
     - Input
@@ -251,44 +248,3 @@ MonoBehaviour:
       _dynamic: 0
   entries:
   - text: Option 2 Dialogue
---- !u!114 &8206366368127133242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b942bd69798ec049bb4330c9a4df973, type: 3}
-  m_Name: Example Sub Graph Dialogue Configuration
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1496, y: -8}
-  ports:
-    keys:
-    - Input
-    - Output
-    values:
-    - _fieldName: Input
-      _node: {fileID: 8206366368127133242}
-      _typeQualifiedName: Juce.Dialogue.Configuration.Flow.DialogueFlow, Juce.Dialogue.Runtime,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: 2110427121848423838}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Output
-      _node: {fileID: 8206366368127133242}
-      _typeQualifiedName: Juce.Dialogue.Configuration.Flow.DialogueFlow, Juce.Dialogue.Runtime,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  subGraph: {fileID: 11400000, guid: e6fc621b7f579454e858a4e279558556, type: 2}
